@@ -63,7 +63,7 @@ ax[1].set_title("Canny Edge Detection")
 
 Kode tersebut menggunakan Matplotlib untuk membuat visualisasi gambar dalam bentuk subplot, menampilkan gambar grayscale asli dan hasil deteksi tepi Canny secara berdampingan. Pertama, fig, axs = plt.subplots(1, 2, figsize=(10, 10)) membuat sebuah figure dan dua subplot yang disusun dalam satu baris dan dua kolom, dengan ukuran keseluruhan 10x10 inci. Variabel axs adalah array dari objek subplot, dan ax = axs.ravel() meratakan array tersebut untuk memudahkan akses ke setiap subplot secara individual. Pada subplot pertama (ax[0]), gambar grayscale (gray) ditampilkan menggunakan ax[0].imshow(gray, cmap="gray"), dengan colormap "gray" untuk memastikan gambar ditampilkan dalam skala abu-abu. Judul subplot pertama diatur menjadi "Original Image" menggunakan ax[0].set_title("Original Image"). Pada subplot kedua (ax[1]), hasil deteksi tepi Canny (edges) ditampilkan juga dalam skala abu-abu menggunakan ax[1].imshow(edges, cmap="gray"), dan diberi judul "Canny Edge Detection" menggunakan ax[1].set_title("Canny Edge Detection"). Dengan kode ini, kedua gambar ditampilkan berdampingan dalam satu figure untuk memudahkan perbandingan antara gambar asli dan hasil deteksi tepinya.
 
-# 6. Mendeteksi Garis tepi menggunakan algoritma hough
+# 6. Mendeteksi Garis tepi menggunakan algoritma Transformasi Hough
 
 ```bash
 lines = cv2.HoughLinesP(edges, 1, np.pi/255, 0, maxLineGap = 2)
@@ -81,7 +81,7 @@ Kode tersebut menggunakan transformasi Hough untuk mendeteksi garis-garis pada g
 
 Selanjutnya, image_line = image.copy() membuat salinan dari gambar asli (image) dan menyimpannya dalam variabel image_line. Salinan ini digunakan untuk menggambar garis-garis yang terdeteksi pada gambar asli tanpa mengubah gambar asli itu sendiri. Dengan langkah-langkah ini, kode tersebut menyiapkan data deteksi garis dan membuat salinan gambar asli untuk menampilkan hasil deteksi garis nantinya.
 
-# 7. Mendeklarasikan setiap garis pada gambar
+# 7. Mendeklarasikan garis pada gambar
 
 ```bash
 for line in lines:
